@@ -9,6 +9,8 @@ public class playmove : MonoBehaviour
    public float xRange = 8;
 
    private float _horizontalInput;
+
+   public GameObject shootPrefab;
     
     void Start()
     {
@@ -17,6 +19,16 @@ public class playmove : MonoBehaviour
 
 
     void Update()
+    {
+        PlayerMovement();
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(shootPrefab, transform.position, shootPrefab.transform.rotation);
+        }
+    }
+
+    void PlayerMovement()
     {
         _horizontalInput = Input.GetAxisRaw("Horizontal");
 
