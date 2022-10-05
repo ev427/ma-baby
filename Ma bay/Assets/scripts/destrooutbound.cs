@@ -13,6 +13,11 @@ public class destrooutbound : MonoBehaviour
     {
         if(transform.position.y > topBound)
         {
+            Destroy(this.gameObject); 
+        }
+
+        if(transform.position.y < lowerBound)
+        {
             Destroy(this.gameObject);
         }
     }
